@@ -11,7 +11,9 @@ server.use(bp.json())
 
 
 //Register routes
+import UserController from './controllers/UserController';
 
+server.use('/api/users', new UserController().router)
 
 //Below this line stays the same
 
