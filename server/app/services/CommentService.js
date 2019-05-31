@@ -3,7 +3,7 @@ let ObjectId = mongoose.Schema.Types.ObjectId
 
 let _schema = new mongoose.Schema({
   text: { type: String, required: true },
-  votes: { type: Number, required: true },
+  votes: { type: Number, required: true, default: 0 },
   userId: { type: ObjectId, required: true },
   movieId: { type: ObjectId, required: true }
 }, { timestamps: true })

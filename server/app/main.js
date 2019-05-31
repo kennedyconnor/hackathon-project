@@ -13,9 +13,11 @@ server.use(bp.json())
 //Register routes
 import UserController from './controllers/UserController';
 import MovieController from './controllers/MovieController';
+import CommentController from './controllers/CommentController';
 
 server.use('/api/users', new UserController().router)
 server.use('/api/movies', new MovieController().router)
+server.use('/api/comments', new CommentController().router)
 
 //Below this line stays the same
 

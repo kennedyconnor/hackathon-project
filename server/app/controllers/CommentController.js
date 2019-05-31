@@ -7,22 +7,20 @@ let _repo = _service.repository
 export default class CommentController {
   constructor() {
     this.router = express.Router()
+      .get('/movieId/:id', this.getAllCommentsByMovie)
       .get('', this.getAllComments)
-      .get('/:id', this.getCommentById)
       .post('', this.createComment)
       .use('*', this.defaultRoute)
   }
-
   async getAllComments(req, res, next) {
     try {
       let comments = await _repo.find({})
       return res.send(comments)
     } catch (error) { next(error) }
   }
-
-  async  getCommentById(req, res, next) {
+  async  getAllCommentsByMovie(req, res, next) {
     try {
-      let comment = await _repo.findById(req.params.id)
+      let comment = await _repo.find({ movieId: req.params.id })
       return res.send(comment)
     } catch (error) { next(error) }
   }
