@@ -28,6 +28,7 @@ export default class MovieController {
   }
   async createMovie(req, res, next) {
     try {
+      console.log('movie check')
       let movie = await _repo.create(req.body)
       return res.status(201).send(movie)
     } catch (error) {
