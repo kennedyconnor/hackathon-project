@@ -16,6 +16,8 @@ export default class MovieController {
       .use('*', this.defaultRoute)
   }
 
+
+
   async getAllMovies(req, res, next) {
     try {
       let movies = await _repo.find({})
