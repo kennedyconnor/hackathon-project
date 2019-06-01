@@ -41,7 +41,6 @@ export default class MovieService {
     _subscribers[prop].push(fn)
   }
   getAllMovies() {
-    console.log("not sure what to say yet")
     movieApi.get('')
       .then(res => {
         let data = res.data.map(m => new Movie(m))
