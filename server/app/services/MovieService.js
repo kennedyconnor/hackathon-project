@@ -15,8 +15,26 @@ let _schema = new mongoose.Schema({
 
 }, { timestamps: true })
 
+
+
 export default class MovieService {
   get repository() {
     return mongoose.model('movie', _schema)
+  }
+
+  async voteUpMovie(updatedMovieId) {
+    let movie = await this.repository.findById(updatedMovieId)
+
+    if (!movie) { throw new Error("No Movie to UpVoate!!!!") }
+    movie['votes']++
+    await movie.save()
+    return movie
+  }
+  async voteDownMovie(updatedMovie) {
+    let movie = await this.repository.findById(updatedMovie)
+    if (!movie) { throw new Error("No Movie to UpVoate!!!!") }
+    movie['votes']--
+    await movie.save()
+    return movie
   }
 }
