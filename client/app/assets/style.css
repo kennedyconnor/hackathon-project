@@ -31,10 +31,17 @@ footer {
   margin: auto auto;
   /* min-width: fit-content; */
 }
+.comment-voting-counter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
 .card-img {
   height: 25vh;
 }
-
+#comment-counter {
+  text-align: center;
+}
 .fc {
 min-height: fit-content;
 
