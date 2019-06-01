@@ -20,4 +20,11 @@ export default class MovieController {
 
     // console.log(movies)
   }
+
+  voteUpMovie(movieId) {
+    _movieService.voteUpMovie(movieId)
+  }
+  voteDownMovie(movieId) {
+    _movieService.voteDownMovie(movieId)
+  }
 }

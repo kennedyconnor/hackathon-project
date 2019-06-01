@@ -1,6 +1,6 @@
 export default class Movie {
   constructor(data) {
-
+    this.id = data._id
     this.title = data.title
     this.pictureUrl = data.pictureUrl
     this.description = data.description
@@ -31,23 +31,23 @@ export default class Movie {
                 </button>
               </p>
               <div class="collapse" id="collapseExample">
-                // <div class="card card-body">
-                //   This is where the main comment would go.
-                //   <div class="comment-voting-counter row">
-                //     <div class="btn-group-vertical col-2 d-flex flex-column align-items-center">
-                //       <button class="btn text-center p-0 btn-primary"><i class="fas fa-hand-point-up"></i></button>
-                //       <p id="comment-counter">0</p><button class="btn text-center p-0 btn-danger"><i
-                //           class="fas fa-hand-point-down"></i></button>
-                //     </div>
-                //   </div>
-                // </div>
+                 <div class="card card-body">
+                   This is where the main comment would go.
+                   <div class="comment-voting-counter row">
+                     <div class="btn-group-vertical col-2 d-flex flex-column align-items-center">
+                       <button class="btn text-center p-0 btn-primary"><i class="fas fa-hand-point-up"></i></button>
+                       <p id="comment-counter">0</p><button class="btn text-center p-0 btn-danger"><i
+                           class="fas fa-hand-point-down"></i></button>
+                    </div>
+                  </div>
+                 </div>
               </div>
             </div>
 
           </div>
           <div class="col-2 btn-group-vertical voting-counter">
-            <button class="btn btn-primary"><i class="fas fa-hand-point-up"></i></button>
-            <p>${this.votes}</p><button class="btn btn-danger"><i class="fas fa-hand-point-down"></i></button>
+            <button class="btn btn-primary" onclick="app.controllers.movieController.voteUpMovie('${this.id}')")><i class="fas fa-hand-point-up"></i></button>
+            <p id="vote-count">${this.votes}</p><button class="btn btn-danger" onclick="app.controllers.movieController.voteDownMovie('${this.id}')"><i class="fas fa-hand-point-down"></i></button>
           </div>
         </div>
       </div>

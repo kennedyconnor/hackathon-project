@@ -47,6 +47,30 @@ export default class MovieService {
         _setState('movies', data)
       })
   }
+
+  voteUpMovie(id) {
+    movieApi.put(id + '/up')
+      .then(res => {
+        console.log('voted up', res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    this.getAllMovies()
+  }
+
+  voteDownMovie(id) {
+    movieApi.put(id + '/down')
+      .then(res => {
+        console.log('voted down', res)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    this.getAllMovies()
+  }
+
+
   // addMovie(movie) {
   //   movieApi.post('', movie)
   //     .then(res => {
