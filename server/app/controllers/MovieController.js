@@ -35,8 +35,7 @@ export default class MovieController {
     try {
       let movie = await _repo.create(req.body)
       return res.status(201).send(movie)
-    } catch (error) {
-    }
+    } catch (error) { next(error) }
   }
 
   async voteUpMovie(req, res, next) {
