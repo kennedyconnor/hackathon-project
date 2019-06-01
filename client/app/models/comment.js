@@ -1,21 +1,22 @@
 export default class comment {
   constructor(data) {
-    this.quote = data.comment.body,
-      this.author = data.comment.author
+    this.comment = data.comment
+    this.author = data.comment.author
+    this.votes = data.comment.votes
   }
 
-  get Template() {
+  get CommentTemplate() {
     return `
-    <div class="container">
-    <div class="row" id="comment">
-    <div class="col-6">
-        <h5>${this.quote}</h3></h5>
-        </div>
-        <div class="row">
-        <h6>${this.author}</h6>
-        </div>
-        </div>
-        </div>
+   <div class="card card-body">
+                  ${this.comment}
+                  <div class="comment-voting-counter row">
+                    <div class="btn-group-vertical col-2 d-flex flex-column align-items-center">
+                      <button class="btn text-center p-0 btn-primary"><i class="fas fa-hand-point-up"></i></button>
+                      <p id="comment-counter">${this.votes}</p><button class="btn text-center p-0 btn-danger"><i
+                          class="fas fa-hand-point-down"></i></button>
+                    </div>
+                  </div>
+                </div>
         `
   }
 }
