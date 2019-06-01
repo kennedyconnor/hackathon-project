@@ -10,7 +10,7 @@ let _state = {
 }
 
 let _subscribers = {
-  activeUser: {}
+  activeUser: []
 }
 
 function _setState(prop, data) {
@@ -43,17 +43,17 @@ export default class UserService {
   // }
 
   userLogin(userData) {
-    debugger
+    // debugger
     _userApi.get(userData.name + '/name')
       .then(res => {
         let user = res.data
         if (user) {
           console.log('User returned: ', user)
-          return user
+          _setState('activeUser', user)
         }
         else {
           user = this.addUser(userData)
-          return user
+          _setState('activeUser', user)
         }
       })
   }
