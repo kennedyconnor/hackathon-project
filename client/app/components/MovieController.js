@@ -12,6 +12,15 @@ function _drawMovies() {
   document.getElementById('topten').innerHTML = template
 }
 
+function -drawTopTenMovies() {
+  let movies = -serviceTopTenMovies;
+  movies.forEach(m => {
+    let movie = newMovie(m)
+    template += movie.template
+
+  })
+}
+
 
 export default class MovieController {
   constructor() {
