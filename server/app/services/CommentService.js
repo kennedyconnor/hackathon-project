@@ -12,4 +12,20 @@ export default class CommentService {
   get repository() {
     return mongoose.model('comment', _schema)
   }
+
+  async voteUpComment(updatedCommentId) {
+    let comment = await this.repository.findById(updatedCommentId)
+
+    if (!comment) { throw new Error("No Comment to UpVoate!!!!") }
+    comment['votes']++
+    await comment.save()
+    return comment
+  }
+  async voteDownComment(updatedComment) {
+    let comment = await this.repository.findById(updatedComment)
+    if (!comment) { throw new Error("No Comment to UpVoate!!!!") }
+    comment['votes']--
+    await comment.save()
+    return comment
+  }
 }
