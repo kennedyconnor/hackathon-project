@@ -1,4 +1,4 @@
-import MovieService from "./todo-service.js";
+import MovieService from "./MovieService.js";
 
 const _movieService = new MovieService()
 

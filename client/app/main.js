@@ -1,13 +1,13 @@
-import MovieController from "./components/movie/movie-controller.js"
-import UserController from "./components/user/user-controller.js"
-import Comment from "./components/comment/comment-controller.js"
+//import MovieController from "./components/MovieController"
+import UserController from "./components/UserController.js"
+//import CommentController from "./components/CommentController"
 
 class App {
   constructor() {
     this.controllers = {
-      movieController: new MovieController(),
-      userController: new UserController(),
-      comment: new CommentController(),
+      //movieController: new MovieController(),
+      userController: new UserController()
+      //commentController: new CommentController(),
     }
 
   }

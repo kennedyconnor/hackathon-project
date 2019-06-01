@@ -17,6 +17,7 @@ import MovieController from './controllers/MovieController';
 import CommentController from './controllers/CommentController';
 
 server.use(cors())
+server.use(bp.urlencoded({ extended: true }))
 server.use('/api/users', new UserController().router)
 server.use('/api/movies', new MovieController().router)
 server.use('/api/comments', new CommentController().router)

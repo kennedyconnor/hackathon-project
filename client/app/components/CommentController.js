@@ -1,4 +1,4 @@
-import CommentService from "./comment-service.js";
+import CommentService from "./CommentService.js";
 
 //private 
 let _commentService = new CommentService()

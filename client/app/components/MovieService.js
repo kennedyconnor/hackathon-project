@@ -1,4 +1,4 @@
-import Movie from "../../models/movie.js";
+import Movie from '../models/Movie'
 //Private
 const movieApi = axios.create({
   baseURL: "//localhost:3000/api/whateverYourDestinationIs"

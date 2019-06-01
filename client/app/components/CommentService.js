@@ -1,4 +1,4 @@
-import Comment from "../../models/movie.js";
+import Comment from "../models/Comment.js";
 
 const _commentApi = axios.create({
   baseURL: "//localhost:3000/api/whateverYourDestinationIs",
