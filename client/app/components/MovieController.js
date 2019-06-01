@@ -3,18 +3,21 @@ import MovieService from "./MovieService.js";
 const _movieService = new MovieService()
 
 function _drawMovies() {
-  let movie = _movieService.Movie
+  let movies = _movieService.TopTenMovies
+  console.log(movies)
   let template = ''
-  movie.forEach(movie => {
-    template += movie.Template
+  movies.forEach(movie => {
+    template += movie.TopTenTemplate
   })
-  document.getElementById('movie').innerHTML = template
+  document.getElementById('topten').innerHTML = template
 }
 
 
 export default class MovieController {
   constructor() {
-    _movieService.addSubscriber("movie", _drawMovies)
-    _movieService.getMovies()
+    _movieService.addSubscriber("movies", _drawMovies)
+    _movieService.getAllMovies()
+
+    // console.log(movies)
   }
 }

@@ -1,4 +1,4 @@
-import Movie from '../models/Movie'
+import Movie from '../models/Movie.js'
 //Private
 const movieApi = axios.create({
   baseURL: "//localhost:3000/api/movies"
@@ -22,11 +22,19 @@ function _setState(prop, data) {
 
 //Public
 export default class MovieService {
-  get MovieError() {
-    return _state.error
+
+  get Movies() {
+    return _state.movies.map(el => new Movie(el))
+
   }
-  get Movie() {
-    return _state.error
+
+  get TopTenMovies() {
+
+    let topTen = _state.movies.sort((a, b) => {
+      return b.votes - a.votes
+    })
+    return topTen
+
   }
 
   addSubscriber(prop, fn) {
@@ -36,26 +44,25 @@ export default class MovieService {
     console.log("not sure what to say yet")
     movieApi.get('')
       .then(res => {
-        console.log(res)
-        let data = res.data.data.map(m => new Movie(m))
+        let data = res.data.map(m => new Movie(m))
         _setState('movies', data)
       })
   }
-  addMovie(movie) {
-    movieApi.post('', movie)
-      .then(res => {
-        console.log(res)
-        this.getMovies()
-      })
-      .catch(err => _setState('error', err.response.data))
-  }
-  removeMovie(movieId) {
-    console.log(movieId)
-    movieApi.delete(movieId)
-      .then(res => {
-        this.getMovies
-      })
-  }
+  // addMovie(movie) {
+  //   movieApi.post('', movie)
+  //     .then(res => {
+  //       console.log(res)
+  //       this.getMovies()
+  //     })
+  //     .catch(err => _setState('error', err.response.data))
+  // }
+  // removeMovie(movieId) {
+  //   console.log(movieId)
+  //   movieApi.delete(movieId)
+  //     .then(res => {
+  //       this.getMovies
+  //     })
+  // }
 
 
 }

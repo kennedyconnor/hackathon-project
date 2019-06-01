@@ -1,5 +1,6 @@
 export default class Movie {
   constructor(data) {
+
     this.title = data.title
     this.pictureUrl = data.pictureUrl
     this.description = data.description
@@ -121,3 +122,4 @@ export default class Movie {
       </div>
     `
   }
+}
