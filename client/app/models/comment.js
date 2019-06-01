@@ -1,8 +1,9 @@
 export default class comment {
   constructor(data) {
-    this.comment = data.comment
-    this.author = data.comment.author
-    this.votes = data.comment.votes
+    this.comment = data.text
+    //this.author = data.userId
+    this.movie = data.movieId
+    this.votes = data.votes
   }
 
   get CommentTemplate() {

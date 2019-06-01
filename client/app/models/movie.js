@@ -77,7 +77,7 @@ export default class Movie {
           </div>
           <div class="col-2 btn-group-vertical footer-voting-counter">
             <button class="btn btn-primary p-0"><i class="fas fa-hand-point-up"></i></button>
-            <p>0</p><button class="btn btn-danger p-0"><i class="fas fa-hand-point-down"></i></button>
+            <p>${this.votes}</p><button class="btn btn-danger p-0"><i class="fas fa-hand-point-down"></i></button>
           </div>
         </div>
       </div>
@@ -96,7 +96,7 @@ export default class Movie {
           </div>
           <div class="col-2 btn-group-vertical footer-voting-counter">
             <button class="btn btn-primary p-0"><i class="fas fa-hand-point-up"></i></button>
-            <p>0</p><button class="btn btn-danger p-0"><i class="fas fa-hand-point-down"></i></button>
+            <p>${this.votes}</p><button class="btn btn-danger p-0"><i class="fas fa-hand-point-down"></i></button>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import Movie from '../models/Movie'
 //Private
 const movieApi = axios.create({
-  baseURL: "//localhost:3000/api/whateverYourDestinationIs"
+  baseURL: "//localhost:3000/api/movies"
 });
 
 let _state = {
@@ -13,6 +13,7 @@ let _subscribers = {
   movies: [],
   errors: {}
 }
+
 
 function _setState(prop, data) {
   _state[prop] = data
@@ -31,9 +32,9 @@ export default class MovieService {
   addSubscriber(prop, fn) {
     _subscribers[prop].push(fn)
   }
-  getMovies() {
+  getAllMovies() {
     console.log("not sure what to say yet")
-    movieApi.get()
+    movieApi.get('')
       .then(res => {
         console.log(res)
         let data = res.data.data.map(m => new Movie(m))

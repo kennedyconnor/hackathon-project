@@ -27,10 +27,10 @@ export default class CommentService {
     return _state.comment
   }
 
-  getComment() {
+  getAllMovieComments() {
 
     _commentApi.get().then(res => {
-      _setState('comment', new Comment(res.data))
+      _setState('comment', new Comment(res.data.data))
     })
       .catch(err => {
         console.log(err)
