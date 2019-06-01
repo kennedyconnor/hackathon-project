@@ -1,5 +1,9 @@
+body {
+  color: white;
+  text-shadow: 2px 2px black;
+}
 #bg-image {
-  background-image: url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+  background-image: url(https://images.unsplash.com/photo-1514306191717-452ec28c7814?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
   background-color: rgb(54, 53, 53);
   background-size: cover;
   background-repeat: no-repeat;
@@ -21,13 +25,37 @@ footer {
   align-items: center;
   margin: auto auto;
 }
-
+.footer-voting-counter {
+  float: right;
+  align-items: center;
+  margin: auto auto;
+  /* min-width: fit-content; */
+}
 .card-img {
   height: 25vh;
 }
 
 .fc {
 min-height: fit-content;
+
 }
 
+.btn-group-vertical>.btn {
+  width: 25%
+}
+.fixed-bottom {
+  margin-top: 200px;
+}
+.card {
+  background-color: rgba(0, 0, 0, 0.479)
+}
+.navbar {
+  background-color: rgba(0, 0, 0, 0.479);
 
+}
+.navbar-brand {
+  margin-right: 20px;
+}
+.fa-ticket-alt {
+  margin-left: 20px;
+}
